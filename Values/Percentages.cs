@@ -51,7 +51,7 @@ public record IntegerBetween0And100NonInclusive : Integer, INonNegativeInteger
     /// </summary>
     /// <param name="value">The integer value.</param>
     /// <returns>A Result containing the created instance or an error.</returns>
-    public Result<IntegerBetween0And100NonInclusive> Create(int value) => 
+    public static Result<IntegerBetween0And100NonInclusive> Create(int value) => 
         value > 100
             ? Result<IntegerBetween0And100NonInclusive>.Fail(new UnknownError())
             : Result<IntegerBetween0And100NonInclusive>.Ok(new IntegerBetween0And100NonInclusive(value));
